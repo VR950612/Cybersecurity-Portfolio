@@ -1,2 +1,2 @@
 # Cybersecurity-Portfolio
-My Cybersecurity Portfolio Projec
+My Cybersecurity Portfolio Project
