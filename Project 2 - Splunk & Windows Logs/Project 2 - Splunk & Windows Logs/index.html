@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Splunk SOC Lab Portfolio</title>
+    <meta
+      name="description"
+      content="A cybersecurity portfolio project demonstrating Splunk SIEM monitoring,
+      Windows Security log analysis, brute-force attack simulation, and dashboard creation."
+    />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" aria-label="Primary navigation">
+      <a class="brand" href="#top">Veni Shri / SOC Lab</a>
+      <nav>
+        <a href="#overview">Overview</a>
+        <a href="#detection">Detection</a>
+        <a href="#evidence">Evidence</a>
+        <a href="#dashboard">Dashboard</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Project 02 / Splunk SIEM Monitoring</p>
+          <h2>Built a simple SOC lab using Splunk to monitor Windows Security logs.</h2>
+          <p class="lede">
+            A cybersecurity portfolio project focused on log ingestion, brute-force attack simulation,
+            suspicious activity detection, and dashboard creation using Splunk SIEM.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#detection">View Detection Logic</a>
+            <a class="button secondary" href="#dashboard">View Dashboard</a>
+            <a class="button secondary" href="#evidence">View Evidence Gallery</a>
+          </div>
+        </div>
+
+        <aside class="incident-card" aria-label="SOC lab summary">
+          <div>
+            <span class="status-dot"></span>
+            <span>SOC Lab Summary</span>
+          </div>
+          <dl>
+            <dt>Monitoring Tool</dt>
+            <dd>Splunk SIEM</dd>
+
+            <dt>Data Source</dt>
+            <dd>Windows Security Event Logs</dd>
+
+            <dt>Threat Scenario</dt>
+            <dd>Simulated brute-force login attempts</dd>
+
+            <dt>Detection Focus</dt>
+            <dd>Failed login monitoring using Event ID 4625</dd>
+          </dl>
+        </aside>
+      </section>
+
+      <section class="metrics" aria-label="Project highlights">
+        <article>
+          <strong>4625</strong>
+          <span>Windows Security Event ID</span>
+        </article>
+
+        <article>
+          <strong>5+</strong>
+          <span>Failed login threshold</span>
+        </article>
+
+        <article>
+          <strong>3</strong>
+          <span>Core SOC activities demonstrated</span>
+        </article>
+      </section>
+
+      <section class="split-section" id="overview">
+        <div>
+          <p class="eyebrow">Project Overview</p>
+          <h2>Security monitoring and brute-force detection using Splunk.</h2>
+          <p>
+            Built a simple Security Operations Center (SOC) lab using Splunk to collect,
+            analyse, and monitor Windows Security Event Logs. The project focused on
+            identifying suspicious authentication activity and visualising failed login trends.
+          </p>
+        </div>
+
+        <div class="workflow" aria-label="SOC workflow">
+          <div>Configure log ingestion</div>
+          <div>Generate failed login events</div>
+          <div>Analyse Windows Security logs</div>
+          <div>Detect suspicious activity</div>
+          <div>Apply threshold-based logic</div>
+          <div>Create monitoring dashboards</div>
+        </div>
+      </section>
+
+      <section class="command-section">
+        <p class="eyebrow">Tools Used</p>
+        <h2>Technologies and commands used in the SOC lab.</h2>
+
+        <div class="command-grid">
+          <article>
+            <h3>Security Tools</h3>
+            <code>Splunk SIEM</code>
+            <code>Windows Event Logs</code>
+            <code>Splunk Dashboard Studio</code>
+          </article>
+
+          <article>
+            <h3>Commands & Queries</h3>
+            <code>runas /user:fakeuser cmd</code>
+            <code>EventCode=4625</code>
+            <code>stats count by Account_Name</code>
+            <code>rename Account_Name as user</code>
+          </article>
+        </div>
+      </section>
+
+      <section class="architecture" id="detection">
+        <div>
+          <p class="eyebrow">Detection Logic</p>
+          <h2>Brute-force detection using Windows Security Event ID 4625.</h2>
+          <p>
+            Simulated failed login attempts and analysed Windows Security Event Logs
+            to identify abnormal authentication patterns associated with brute-force activity.
+          </p>
+        </div>
+
+        <div class="code-block">
+<pre>
+index=* sourcetype=WinEventLog:Security EventCode=4625
+| stats count as failed_attempts by Account_Name, Source_Network_Address
+| where failed_attempts >= 5
+| sort - failed_attempts
+| rename Account_Name as user, Source_Network_Address as src_ip
+</pre>
+        </div>
+      </section>
+
+      <section class="evidence-section" id="evidence">
+        <p class="eyebrow">Evidence Gallery</p>
+        <h2>Screenshots and validation evidence from the SOC lab.</h2>
+
+        <div class="evidence-grid">
+          <figure class="wide">
+            <img src="assets/splunk-log-ingestion.png" alt="Splunk log ingestion screenshot" />
+            <figcaption>Windows Security Event Logs successfully ingested into Splunk.</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/event-4625-results.png" alt="Event ID 4625 search results" />
+            <figcaption>Validation of Windows Security Event ID 4625 showing failed authentication attempts generated during brute-force attack simulation.</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/bruteforce-query.png" alt="Brute-force detection query in Splunk" />
+            <figcaption>Threshold-based brute-force detection SPL query.</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/dashboard-overview.png" alt="Splunk dashboard overview" />
+            <figcaption>Dashboard visualising failed login trends and suspicious activity.</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/high-risk-users.png" alt="High-risk users dashboard panel" />
+            <figcaption>Identification of high-risk user accounts with repeated failed logins.</figcaption>
+          </figure>
+
+          <figure>
+            <img src="assets/source-ip-analysis.png" alt="Source IP analysis dashboard" />
+            <figcaption>Source IP monitoring and suspicious authentication activity analysis.</figcaption>
+          </figure>
+        </div>
+
+        <p class="eyebrow">Analysis Findings</p>
+        <h2>Suspicious authentication activity identified.</h2>
+
+        <div class="learning-list">
+          <article>
+            <h3>Failed Login Analysis</h3>
+            <p>
+              Analysed repeated failed login attempts associated with specific
+              user accounts and source IP addresses.
+            </p>
+          </article>
+
+          <article>
+            <h3>Event Visibility Validation</h3>
+            <p>
+              Validated successful ingestion and indexing of Windows Security Event Logs in Splunk.
+            </p>
+          </article>
+
+          <article>
+            <h3>Controlled Lab Simulation</h3>
+            <p>
+              Observed failed login attempts originating from localhost (::1),
+              confirming simulated attack activity within a controlled lab environment.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="result-section" id="dashboard">
+        <div>
+          <p class="eyebrow">Dashboard Creation</p>
+          <h2>Security monitoring dashboards built using Splunk Dashboard Studio.</h2>
+        </div>
+
+        <div class="comparison-table" role="table" aria-label="Dashboard capabilities">
+          <div role="row" class="header-row">
+            <span role="columnheader">Dashboard Feature</span>
+            <span role="columnheader">Purpose</span>
+          </div>
+
+          <div role="row">
+            <span role="cell">Failed Login Trends</span>
+            <span role="cell">Visualise authentication failures over time</span>
+          </div>
+
+          <div role="row">
+            <span role="cell">High-Risk Users</span>
+            <span role="cell">Identify accounts with repeated failed logins</span>
+          </div>
+
+          <div role="row">
+            <span role="cell">Source IP Monitoring</span>
+            <span role="cell">Detect suspicious login activity by source address</span>
+          </div>
+
+          <div role="row">
+            <span role="cell">Threat Detection</span>
+            <span role="cell">Highlight potential brute-force attacks</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="learning-section">
+        <p class="eyebrow">Skills Demonstrated</p>
+
+        <div class="learning-list">
+          <article>
+            <h3>Log Ingestion</h3>
+            <p>Configured Splunk to collect and index Windows Security Event Logs.</p>
+          </article>
+
+          <article>
+            <h3>Attack Simulation</h3>
+            <p>Generated failed login events to simulate brute-force authentication attempts.</p>
+          </article>
+
+          <article>
+            <h3>Detection Engineering</h3>
+            <p>Implemented threshold-based detection logic using Splunk SPL queries.</p>
+          </article>
+
+          <article>
+            <h3>Dashboarding</h3>
+            <p>Created basic dashboards to monitor suspicious authentication activity.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>Cybersecurity Project Portfolio – Splunk SOC Lab</span>
+      <a href="#top">Back to top</a>
+    </footer>
+  </body>
+</html>
