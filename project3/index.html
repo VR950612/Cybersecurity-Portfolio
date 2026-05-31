@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wireshark ICMP Network Analysis Portfolio</title>
+    <meta
+      name="description"
+      content="A cybersecurity portfolio project demonstrating Wireshark network traffic analysis,
+      ICMP packet capture, ping request and reply monitoring, and basic network troubleshooting."
+    />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" aria-label="Primary navigation">
+      <a class="brand" href="#top">Veni Shri / Wireshark Analysis</a>
+      <nav>
+        <a href="#overview">Overview</a>
+        <a href="#analysis">Analysis</a>
+        <a href="#evidence">Evidence</a>
+        <a href="#results">Results</a>
+      </nav>
+    </header>
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Project 03 / Wireshark Network Traffic Analysis</p>
+          <h2>
+            Analysed ICMP network traffic using Wireshark to monitor ping request
+            and reply communication.
+          </h2>
+          <p class="lede">
+            A cybersecurity portfolio project focused on packet capture,
+            ICMP traffic analysis, network troubleshooting, and connectivity validation
+            using Wireshark.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#analysis">View Packet Analysis</a>
+            <a class="button secondary" href="#evidence">View Evidence Gallery</a>
+            <a class="button secondary" href="#results">View Results</a>
+          </div>
+        </div>
+        <aside class="incident-card" aria-label="Project summary">
+          <div>
+            <span class="status-dot"></span>
+            <span>Project Summary</span>
+          </div>
+          <dl>
+            <dt>Monitoring Tool</dt>
+            <dd>Wireshark</dd>
+            <dt>Protocol Analysed</dt>
+            <dd>ICMP</dd>
+            <dt>Traffic Type</dt>
+            <dd>Ping Request and Reply</dd>
+            <dt>Objective</dt>
+            <dd>Network connectivity analysis</dd>
+          </dl>
+        </aside>
+      </section>
+      <section class="metrics" aria-label="Project highlights">
+        <article>
+          <strong>ICMP</strong>
+          <span>Protocol Analysed</span>
+        </article>
+        <article>
+          <strong>2</strong>
+          <span>Packet types captured</span>
+        </article>
+        <article>
+          <strong>3</strong>
+          <span>Core analysis activities demonstrated</span>
+        </article>
+      </section>
+      <section class="split-section" id="overview">
+        <div>
+          <p class="eyebrow">Project Overview</p>
+          <h2>Network packet analysis using Wireshark.</h2>
+          <p>
+            ICMP (Internet Control Message Protocol) was used to test network
+            connectivity using the ping command. The Wireshark capture displayed
+            both Echo Request and Echo Reply packets exchanged between the source
+            and destination IP addresses. This confirmed successful two-way
+            communication and verified that the target host was reachable over
+            the network.
+          </p>
+        </div>
+        <div class="workflow" aria-label="Wireshark workflow">
+          <div>Start packet capture</div>
+          <div>Generate ICMP traffic</div>
+          <div>Apply ICMP filter</div>
+          <div>Analyse packet details</div>
+          <div>Validate request and reply</div>
+          <div>Monitor network communication</div>
+        </div>
+      </section>
+      <section class="command-section">
+        <p class="eyebrow">Tools Used</p>
+        <h2>Technologies and commands used in the project.</h2>
+        <div class="command-grid">
+          <article>
+            <h3>Security Tools</h3>
+            <code>Wireshark</code>
+            <code>Windows Command Prompt</code>
+            <code>ICMP Protocol Analysis</code>
+          </article>
+          <article>
+            <h3>Commands & Filters</h3>
+            <code>ping 8.8.8.8</code>
+            <code>icmp</code>
+            <code>Echo (ping) request</code>
+            <code>Echo (ping) reply</code>
+          </article>
+        </div>
+      </section>
+      <section class="architecture" id="analysis">
+        <div>
+          <p class="eyebrow">Packet Analysis</p>
+          <h2>ICMP packet analysis using Wireshark.</h2>
+          <p>
+            Analysed ICMP Echo Request and Echo Reply packets to observe network
+            communication between the source and destination systems and validate
+            successful connectivity.
+          </p>
+        </div>
+        <div class="code-block">
+<pre>
+Filter Applied: icmp
+
+Protocol: ICMP
+Type: Echo (ping) request
+Type: Echo (ping) reply
+
+Source IP: 8.8.8.8
+Destination IP: 192.168.1.42
+
+Response Time: 4.894 ms
+</pre>
+        </div>
+      </section>
+      <section class="evidence-section" id="evidence">
+        <p class="eyebrow">Evidence Gallery</p>
+        <h2>
+          Screenshots and validation evidence from the Wireshark analysis.
+        </h2>
+        <div class="evidence-grid">
+          <figure class="wide">
+            <img src="assets/ping-command.png" alt="Command Prompt ping test to 8.8.8.8" />
+            <figcaption>
+              Ping command executed successfully against 8.8.8.8 with 0% packet loss,
+              confirming network connectivity.
+            </figcaption>
+          </figure>
+          <figure class="wide">
+            <img src="assets/icmp-filter.png" alt="ICMP filter applied in Wireshark" />
+            <figcaption>
+              ICMP filter applied in Wireshark to isolate ping-related traffic.
+            </figcaption>
+          </figure>
+          <figure>
+            <img src="assets/echo-reply.png" alt="ICMP Echo Reply packet in Wireshark" />
+            <figcaption>
+              ICMP Echo Reply packet captured, showing successful response from the destination host.
+            </figcaption>
+          </figure>
+          <figure>
+            <img src="assets/packet-details.png" alt="Wireshark packet details" />
+            <figcaption>
+              Detailed ICMP packet information including response time,
+              sequence number, and checksum validation.
+            </figcaption>
+          </figure>
+        </div>
+        <p class="eyebrow">Analysis Findings</p>
+        <h2>Successful network communication identified.</h2>
+        <div class="learning-list">
+          <article>
+            <h3>ICMP Traffic Analysis</h3>
+            <p>
+              Analysed ICMP Echo Request and Echo Reply packets to monitor
+              network communication activity.
+            </p>
+          </article>
+          <article>
+            <h3>Connectivity Validation</h3>
+            <p>
+              Verified successful communication between source and destination
+              IP addresses using ping requests and replies.
+            </p>
+          </article>
+          <article>
+            <h3>Packet Inspection</h3>
+            <p>
+              Examined packet details including response time,
+              sequence number, protocol type, and checksum information.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section class="result-section" id="results">
+        <div>
+          <p class="eyebrow">Project Results</p>
+          <h2>
+            Successful ICMP communication captured and analysed using Wireshark.
+          </h2>
+        </div>
+        <div class="comparison-table" role="table" aria-label="Analysis results">
+          <div role="row" class="header-row">
+            <span role="columnheader">Analysis Component</span>
+            <span role="columnheader">Outcome</span>
+          </div>
+          <div role="row">
+            <span role="cell">ICMP Filter</span>
+            <span role="cell">Successfully isolated ICMP packets</span>
+          </div>
+          <div role="row">
+            <span role="cell">Echo Request</span>
+            <span role="cell">Detected outbound ping request traffic</span>
+          </div>
+          <div role="row">
+            <span role="cell">Echo Reply</span>
+            <span role="cell">Confirmed successful response from destination</span>
+          </div>
+          <div role="row">
+            <span role="cell">Connectivity Status</span>
+            <span role="cell">Network communication successful</span>
+          </div>
+        </div>
+      </section>
+      <section class="learning-section">
+        <p class="eyebrow">Skills Demonstrated</p>
+        <div class="learning-list">
+          <article>
+            <h3>Packet Capture</h3>
+            <p>
+              Captured and monitored live network traffic using Wireshark.
+            </p>
+          </article>
+          <article>
+            <h3>Protocol Analysis</h3>
+            <p>
+              Analysed ICMP packets including Echo Request and Echo Reply traffic.
+            </p>
+          </article>
+          <article>
+            <h3>Network Troubleshooting</h3>
+            <p>
+              Verified network connectivity and communication between hosts.
+            </p>
+          </article>
+          <article>
+            <h3>Traffic Filtering</h3>
+            <p>
+              Applied protocol-based filtering to isolate relevant network traffic.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <span>Cybersecurity Project Portfolio – Wireshark Network Traffic Analysis</span>
+      <a href="#top">Back to top</a>
+    </footer>
+  </body>
+</html>
